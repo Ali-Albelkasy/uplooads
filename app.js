@@ -24,7 +24,7 @@ const upload = multer({ storage }); // Removed dest option
 
 app.post('/upload', upload.single('file'), async (req, res) => {
   try {
-    const data = await imgModel.insertMany({ img: 'http://localhost:3000/image/' + req.file.originalname }); // Corrected image URL
+    const data = await imgModel.insertMany({ img: 'https://uploasds.onrender.com/image/' + req.file.originalname }); // Corrected image URL
     console.log(data);
     res.json({ message: "done", img: data[0].img });
   } catch (error) {
